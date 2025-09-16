@@ -1,52 +1,23 @@
-
+import "bootstrap";
 import "./style.css";
 
+import "./assets/img/rigo-baby.jpg";
+import "./assets/img/4geeks.ico";
 
 window.onload = function() {
   //write your code here
-};
-function randomNumberOrLetter() {
-      let randomNumber = Math.floor(Math.random() * 13) + 1;
-      if (randomNumber === 1) return "A";
-      if (randomNumber === 11) return "J";
-      if (randomNumber === 12) return "Q";
-      if (randomNumber === 13) return "K";
-      return randomNumber;
-    }
+  let pronoun = ["the", "our", "a"];
+  let adj = ["great", "big", "wonderful", "scary"];
+  let noun = ["jogger", "racoon", "dragon", "dog"];
+  let ext = [".com", ".net", "es", ".org", ".uy"];
 
-    function randomEmoji() {
-      let suits = ["♠", "♥", "♦", "♣"];
-      let randomSuit = suits[Math.floor(Math.random() * suits.length)];
-      return randomSuit;
-    }
-
-    function generateCard() {
-      let headerCard = document.getElementById("headerCard");
-      let bodyCard = document.getElementById("bodyCard");
-      let footerCard = document.getElementById("footerCard");
-
-      let numberResult = randomNumberOrLetter();
-      let emojiResult = randomEmoji();
-
-      headerCard.textContent = emojiResult;
-      bodyCard.textContent = numberResult;
-      footerCard.textContent = emojiResult;
-
-      if (emojiResult === "♥" || emojiResult === "♦") {
-        headerCard.classList.add("red");
-        bodyCard.classList.add("red");
-        footerCard.classList.add("red");
-      } else {
-        headerCard.classList.remove("red");
-        bodyCard.classList.remove("red");
-        footerCard.classList.remove("red");
+  for (let i = 0; i < pronoun.length; i++) {
+    for (let j = 0; j < adj.length; j++) {
+      for (let k = 0; k < noun.length; k++) {
+        for (let h = 0; h < ext.length; h++) {
+          console.log(pronoun[i] + adj[j] + noun[k] + ext[h]);
+        }
       }
     }
-    
-window.onload = generateCard;
-window.onload = () => {
-  generateCard(); 
-
-  const btn = document.getElementById("generateBtn");
-  btn.addEventListener("click", generateCard); 
+  }
 };
